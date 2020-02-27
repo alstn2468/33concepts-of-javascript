@@ -37,16 +37,24 @@ baz();
 ### 이미지로 이해하기
 
 1. `baz`함수 호출
+
 <img src="./images/1.png" width="400"/><br>
 
 2. `bar`함수 호출
+
+
 <img src="./images/2.png" width="400"/><br>
 
 3. `foo`함수 호출
+
 <img src="./images/3.png" width="400"/><br>
 
 4. 최종 콜스택
+
 <img src="./images/4.png" width="400"/><br>
+
+모든 콜스택이 `push`되고 문제가 없는 경우 상단에 존재하는 함수부터<br>
+하나씩 `pop`되게되어 콜스택이 비어 있게 되면 해당 프로그램이 종료되는 것이다.
 
 ### 콘솔로 이해하기
 
