@@ -5,18 +5,18 @@
 스택(Stack)은 후입선출(**L**ast **I**n **F**irst **O**ut, **LIFO**)을 기본으로하는 자료구조다.<br>
 기본적인 보통 연산은 `pop`, `push`, `peek`, `is_empty`가 존재한다.<br>
 
-- `pop` : 스택의 출력 연산
-- `push` : 스택의 입력 연산
-- `peek` : 스택의 가장 상단의 데이터를 확인하는 연산
-- `is_empty` : 스택이 비어있는지 확인하는 연산
+-   `pop` : 스택의 출력 연산
+-   `push` : 스택의 입력 연산
+-   `peek` : 스택의 가장 상단의 데이터를 확인하는 연산
+-   `is_empty` : 스택이 비어있는지 확인하는 연산
 
 ### 스택(Stack)의 사용 사례
 
-- 콜스택 (함수의 재귀호출)
-- 웹 브라우저 방문기록
-- 실행 취소 (undo)
-- 괄호 검사
-- 후위 표기법 계산
+-   콜스택 (함수의 재귀호출)
+-   웹 브라우저 방문기록
+-   실행 취소 (undo)
+-   괄호 검사
+-   후위 표기법 계산
 
 ## 자바스크립트에서의 콜스택
 
@@ -35,17 +35,17 @@
 
 ```javascript
 function foo() {
-    console.log('function foo is called');
-    throw new Error('oops!');
+    console.log("function foo is called");
+    throw new Error("oops!");
 }
 
 function bar() {
-    console.log('function bar is called');
+    console.log("function bar is called");
     foo();
 }
 
 function baz() {
-    console.log('function baz is called');
+    console.log("function baz is called");
     bar();
 }
 
@@ -55,9 +55,9 @@ baz();
 아래와 같이 `foo`, `bar`, `baz`라는 3개의 함수를 작성했습니다.<br>
 3개의 함수는 아래와 같은 역할을 한다.<br>
 
-- `baz`함수 : `bar`함수를 호출(`call`)
-- `bar`함수 : `foo`함수를 호출(`call`)
-- `foo`함수 : `Error`를 던짐(`throw`)
+-   `baz`함수 : `bar`함수를 호출(`call`)
+-   `bar`함수 : `foo`함수를 호출(`call`)
+-   `foo`함수 : `Error`를 던짐(`throw`)
 
 ### 이미지로 이해하기
 
@@ -107,7 +107,7 @@ baz();
 
 ```javascript
 function overflow() {
-     overflow();
+    overflow();
 }
 
 overflow();
@@ -129,17 +129,17 @@ overflow();
 
 ```javascript
 let n = 123;
-let s = 'string';
+let s = "string";
 
 let o = {
-  a: 1,
-  b: null
+    a: 1,
+    b: null
 };
 
-let a = [1, null, 'string'];
+let a = [1, null, "string"];
 
 function f(a) {
-  return a + 2;
+    return a + 2;
 }
 ```
 
@@ -168,7 +168,7 @@ console.log("Second Log");
 
 <img src="./images/10.png" width="700"/><br>
 
-`setTimeOUt`함수의 2번째 인자에 0ms를 주었다고 바로 실행되는 것이 아니다.<br>
+`setTimeOut`함수의 2번째 인자에 0ms를 주었다고 바로 실행되는 것이 아니다.<br>
 `Web API`에 의해 호출된 `First Log`가 출력되는 **콜백 함수**는 이벤트 큐에 삽입된다.<br>
 이것은 0ms뒤에 함수를 실행시키라는 의미가 아니라 **이벤트 큐에 삽입하라는 의미**다.<br>
 
