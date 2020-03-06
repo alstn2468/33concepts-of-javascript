@@ -16,7 +16,7 @@
 `symbol`은 `ES6`에 새로 추가된 원시 타입이고 `BigInt`는 `Chrome 67` 부터 추가되었다.<br>
 위의 **7**가지 **원시 타입**을 제외한 모든 것들은 **참조 타입**이다.<br>
 자바스크립트에서의 **참조 타입**은 `Object`다.<br>
-자바스크립트에서 `Object`는  **함수**, **배열**또한 포함한다.<br>
+자바스크립트에서 `Object`는 **함수**, **배열**또한 포함한다.<br>
 
 ```javascript
 console.log(true instanceof Object); // false
@@ -26,7 +26,7 @@ console.log(undefined instanceof Object); // false
 console.log(1 instanceof Object); // false
 console.log(100 instanceof Object); // false
 console.log(3.14 instanceof Object); // false
-console.log('Primitive' instanceof Object); // false
+console.log("Primitive" instanceof Object); // false
 console.log(Symbol() instanceof Object); // false
 console.log(9007199254740991n instanceof Object); // false
 ```
@@ -34,10 +34,10 @@ console.log(9007199254740991n instanceof Object); // false
 위에서 확인할 수 있듯이 모든 값들이 `Object`의 `instance`가 아닌 것을 확인할 수 있다.<br>
 
 ```javascript
-console.log({ foo: 'bar' } instanceof Object); // true
-console.log([1, 'foo'] instanceof Object); // true
+console.log({ foo: "bar" } instanceof Object); // true
+console.log([1, "foo"] instanceof Object); // true
 function func() {
-    console.log('function');
+    console.log("function");
 }
 console.log(func instanceof Object); // true
 ```
@@ -104,14 +104,14 @@ console.log("secondName :", secondName); // secondName : minsu
 
 ```javascript
 let firstPerson = {
-    name: 'minsu',
+    name: "minsu",
     age: 22
 };
 let secondPerson = firstPerson;
 
-console.log('firstPerson :', firstPerson); 
+console.log("firstPerson :", firstPerson);
 // firstPerson : { name: 'minsu', age: 22 }
-console.log('secondPerson :', secondPerson); 
+console.log("secondPerson :", secondPerson);
 // firstPerson : { name: 'minsu', age: 22 }
 ```
 
@@ -120,38 +120,38 @@ console.log('secondPerson :', secondPerson);
 
 ```javascript
 firstPerson.age = 23;
-console.log('secondPerson :', secondPerson); 
+console.log("secondPerson :", secondPerson);
 // firstPerson : { name: 'minsu', age: 23 }
 ```
 
- `firstPerson`의 `age`값을 변경했지만 `secondPerson`의 값도 변경된 것을 확인할 수 있다.<br>
- 따라서 `Object`는 값(**Value**)가 아닌 참조(**Reference**)로 값을 저장하는 것을 확인할 수 있다.<br>
+`firstPerson`의 `age`값을 변경했지만 `secondPerson`의 값도 변경된 것을 확인할 수 있다.<br>
+따라서 `Object`는 값(**Value**)가 아닌 참조(**Reference**)로 값을 저장하는 것을 확인할 수 있다.<br>
 
- ### 원시 타입처럼 값 복사하기
+### 원시 타입처럼 값 복사하기
 
- 그렇다면 `Object`에서 원시 타입처럼 값을 복사하려면 어떻게 해야할까?<br>
- `Object.assign`매서드를 사용해 복사하면 된다.<br>
+그렇다면 `Object`에서 원시 타입처럼 값을 복사하려면 어떻게 해야할까?<br>
+`Object.assign`매서드를 사용해 복사하면 된다.<br>
 
 ```javascript
 let assignLikePrimitiveOne = {
-    name: 'minsu',
+    name: "minsu",
     age: 22
 };
 let assignLikePrimitiveTwo = Object.assign({}, assignLikePrimitiveOne);
 
-console.log('assignLikePrimitiveOne :', assignLikePrimitiveOne); 
+console.log("assignLikePrimitiveOne :", assignLikePrimitiveOne);
 // assignLikePrimitiveOne : { name: 'minsu', age: 22 }
-console.log('assignLikePrimitiveTwo :', assignLikePrimitiveTwo); 
+console.log("assignLikePrimitiveTwo :", assignLikePrimitiveTwo);
 // assignLikePrimitiveTwo : { name: 'minsu', age: 22 }
 ```
 
-`Object.assign`을 이용해 `Obejct.assing(<원복 객체>, <복사할 객체>)`로 값을 대입한다.<br>
+`Object.assign`을 이용해 `Obejct.assing(<원본 객체>, <복사할 객체>)`로 값을 대입한다.<br>
 따로 유지해야할 객체 값이 없으므로 빈 객체(`{}`)에 `assignLikePrimitiveOne`을 할당했다.<br>
 이전과 같이 `assignLikePrimitiveOne.age = 23`과 같이 값을 변경해 보자.<br>
 
 ```javascript
 assignLikePrimitiveOne.age = 23;
-console.log('assignLikePrimitiveTwo :', assignLikePrimitiveTwo); 
+console.log("assignLikePrimitiveTwo :", assignLikePrimitiveTwo);
 // assignLikePrimitiveTwo : { name: 'minsu', age: 22 }
 ```
 
@@ -184,24 +184,24 @@ console.log('assignLikePrimitiveTwo :', assignLikePrimitiveTwo);
 
 ```javascript
 let firstInfo = {
-    name: 'minsu',
+    name: "minsu",
     age: 22,
-    hobbies: ['Baseball', 'Basketball']
+    hobbies: ["Baseball", "Basketball"]
 };
 
 let secondInfo = Object.assign({}, firstInfo);
 
-console.log('firstInfo :', firstInfo); 
+console.log("firstInfo :", firstInfo);
 //firstInfo : { name: 'minsu', age: 22, hobbies: [ 'Baseball', 'Basketball' ] }
-console.log('secondInfo :', secondInfo); 
+console.log("secondInfo :", secondInfo);
 //secondInfo : { name: 'minsu', age: 22, hobbies: [ 'Baseball', 'Basketball' ] }
 ```
 
 `Object.assign`을 사용해서 객체를 복사한 후 `hobbies`에 값을 추가해보자.<br>
 
 ```javascript
-firstInfo.hobbies.push('Games');
-console.log('secondInfo :', secondInfo);
+firstInfo.hobbies.push("Games");
+console.log("secondInfo :", secondInfo);
 // secondInfo : {
 //   name: 'minsu',
 //   age: 22,
