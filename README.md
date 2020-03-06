@@ -18,3 +18,4 @@
 ## 목차
 
 1. [콜스택 (Call Stack)](1_CallStack/README.md)
+2. [원시 타입 (Primitive Type)](2_PrimitiveType/README.md)
