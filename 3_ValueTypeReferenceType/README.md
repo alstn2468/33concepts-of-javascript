@@ -44,7 +44,7 @@ console.log(dinner); // "pizza"
 그 결과 `dinner`변수 또한 `"pizza"`라는 **문자 리터럴**을 가지고 있게 되었다.<br/>
 크롬 개발자 도구에서 메모리 할당 스냅샷을 찍어 확인해 보면 아래와 같다.<br/>
 
-<img src="./images/1.PNG" width="300"/><br>
+<img src="./images/1.png" width="300"/><br>
 
 `lunch`변수와 `dinner`변수가 같은 문자열 데이터 **메모리**를 가지고 있다.<br/>
 
@@ -59,7 +59,7 @@ console.log(dinner); // "pizza"
 
 위의 상황과 동일하게 크롬 개발자 도구의 메모리를 확인해보았다.<br/>
 
-<img src="./images/2.PNG" width="300"/><br>
+<img src="./images/2.png" width="300"/><br>
 
 `lunch`의 값을 `chicken`이라는 값으로 변경했음에도 `dinner`의 값은 변하지 않았다.<br/>
 또한 `launch`와 `dinner` 두 변수 모두 **다른 메모리 주소**를 가리키고 있다.<br/>
@@ -124,7 +124,7 @@ console.log(newPerson); // {name: "minsu", age: 22, job: "Developer"}
 
 동일하게 크롬 개발자 도구의 메모리 영역을 확인해보았다.<br>
 
-<img src="./images/3.PNG" width="300"/><br>
+<img src="./images/3.png" width="300"/><br>
 
 `newPerson`과 `person`의 메모리 주소가 `@176907`로 같은 것을 확인할 수 있다.<br/>
 여기까지는 이전의 **값 타입**과 별 다른 차이가 없다.<br/>
@@ -141,7 +141,7 @@ console.log(newPerson); // {name: "minsu", age: 22, job: "Front-End Developer"}
 **참조 타입**은 리터럴을 저장하는 것이 아니라 **리터럴의 메모리 주소**를 **저장**하고 있기 때문이다.<br/>
 값이 어떻게 변하였는지 크롬 개발자 도구의 메모리 영역을 확인해보았다.<br>
 
-<img src="./images/4.PNG" width="300"/><br>
+<img src="./images/4.png" width="300"/><br>
 
 **값 타입**에서 값을 변경했을 때는 `dinner`에 대입된 `lunch`의 값을 변경시켰어도<br/>
 기존의 `dinner`가 가지고 있는 값과 메모리 주소는 변경되지 않았었다.<br/>
@@ -165,7 +165,7 @@ console.log(newPerson); // {name: "minsu", age: 22, job: "Developer"}
 
 `Object.assign`함수를 사용한 코드의 메모리 주소를 확인해보았다.<br/>
 
-<img src="./images/5.PNG" width="300"/><br>
+<img src="./images/5.png" width="300"/><br>
 
 `person`과 `newPerson`의 메모리 주소가 다른 것을 확인할 수 있다.<br/>
 기존과 같이 `person`의 값을 바꾸어도 그대로 `newPerson`의 값이 유지되는지 확인해보았다.<br/>
@@ -177,7 +177,7 @@ console.log(person); // {name: "minsu", age: 22, job: "Front-End Developer"}
 console.log(newPerson); // {name: "minsu", age: 22, job: "Developer"}
 ```
 
-<img src="./images/6.PNG" width="300"/><br>
+<img src="./images/6.png" width="300"/><br>
 
 `person`의 값이 변경되었지만 `newPerson`의 값은 변경되지 않은 것을 확인할 수 있다.<br/>
 하지만 아래와 같이 **참조 타입 내부에 참조 타입이 존재**하는 경우 다른 결과를 얻을 수 도 있다.<br/>
@@ -213,7 +213,7 @@ console.log(newStudent);
 위의 코드는 `Object.assign`함수를 이용해 객체를 할당했다.<br/>
 하지만 `student`와 `newStudent`객체 내부에 있는 `info`객체가 **같은 메모리 주소**를 가지고 있다.<br/>
 
-<img src="./images/7.PNG" width="700"/><br>
+<img src="./images/7.png" width="700"/><br>
 
 `student`객체의 `info`의 `firstName`의 값을 바꾸고 확인해보았다.<br/>
 
@@ -238,7 +238,7 @@ console.log(newStudent);
 
 `student`의 `info`의 값이 변하면서 `newStudent`의 `info`객체 또한 변하는 것을 확인할 수 있다.<br/>
 
-<img src="./images/8.PNG" width="700"/><br>
+<img src="./images/8.png" width="700"/><br>
 
 `student`와 `newStudent`객체 자체의 주소는 다르지만 내부의 `info`객체의 주소가 동일하기 때문이다.<br/>
 이와 같이 **객체 내부에 객체**가 있을 때 **재귀 함수**를 이용하거나 `JSON`객체의 함수를 이용하면 된다.<br>
@@ -274,6 +274,6 @@ console.log(newStudent);
 
 `JSON.stringify`를 이용해 문자열로 바꾼후 `JSON.parse`로 다시 객체로 변환하면 된다.<br/>
 
-<img src="./images/9.PNG" width="700"/><br>
+<img src="./images/9.png" width="700"/><br>
 
 위와 같이 `student`와 `newStudent`의 `info`객체가 **다른 주소**를 갖는 것을 확인할 수 있다.<br/>
