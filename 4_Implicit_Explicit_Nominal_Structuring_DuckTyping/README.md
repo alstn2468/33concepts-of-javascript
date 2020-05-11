@@ -18,6 +18,7 @@ console.log(num, typeof num); // 10 "number"
 위와 같은 코드 처럼 `parseInt`나 `toString`같은 함수를 이용해서 **형변환**을 할 수 있다.<br/>
 자바스크립트에서는 `C`나 `Java`와 같은 언어와 달리 `var`나 `let`을 이용해 **변수를 선언**한다.<br/>
 자바스크립트에서 **형변환**을 하는 방법은 **명시적 변환**과 **암시적 변환**이 존재한다.<br/>
+또 자바스크립트에서 사용하지는 않지만 타입 검사 방법으로 **Nominal**, **Structural**, **Duck** 타이핑이 존재한다.<br/>
 
 ## 명시적 변환(Explict Conversion)이란?
 
@@ -333,7 +334,6 @@ console.log("1" == true); // true
 
 마찬가지로 `1`과 `"1"` 그리고 `true`도 동일한 관계를 갖는다.<br/>
 타입에 엄격하지 않은 `==`연산자를 대체하여 엄격한 `===`연산자를 사용해 동등 비교를 한다.<br/>
-다른 타입 검사 방법으로 **Nominal**, **Structural**, **Duck** 타이핑이 존재한다.<br/>
 
 ## 명칭적 타이핑(Nominal Typing)이란?
 
