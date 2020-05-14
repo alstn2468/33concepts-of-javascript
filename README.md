@@ -23,3 +23,4 @@
 4. [명시적 변환, 암시적 변환, Nominal, 구조화, 덕 타이핑](4_Implicit_Explicit_Nominal_Structuring_DuckTyping/README.md)
 5. [== vs === vs typeof](5_==_vs_===_vs_typeof/README.md)
 6. [함수 범위, 블록 범위, 렉시컬(lexical) 범위](6_FunctionScope_BlockScope_and_LexicalScope/README.md)
+7. [식(expression) vs 문(statement)](7_Expression_vs_Statement/README.md)
