@@ -156,7 +156,7 @@ setTimeout(() => {
 위의 예제는 `2s`를 주기로 `tick`이라는 문자열에 콘솔에 출력되게 된다.<br/>
 `setTimeout`을 이용해 `5s`뒤에 `tick`을 출력하는 스케쥴을 중지하고 `stop`을 출력하게 된다.<br/>
 
-<img src="./images/1.png" width="200"/>
+<img src="./images/1.PNG" width="200"/>
 
 위와 같이 2초 주기로 `tick`이 출력되었고 5초뒤에 `stop`이 출력되는 것을 볼 수 있다.<br/>
 
@@ -219,14 +219,14 @@ setTimeout(function run() {
 동일한 기능을 하는 위의 두개의 예제가 존재한다.<br/>
 `setInterval`을 사용할 경우 내부의 스케쥴러가 `func(i)`를 100ms마다 실행한다.<br/>
 
-<img src="./images/2.png" width="500"/>
+<img src="./images/2.PNG" width="500"/>
 
 우리가 원하는 함수의 실행주기는 100ms지만 실제 delay는 더 적다.<br/>
 `func`함수가 실행되며 소비되는 시간이 원인이다.<br/>
 여기에서 우리가 작성한 `func`함수가 `100ms`보다 더 걸리면 다음 함수가 바로 실행될 것이다.<br/>
 **재귀적**인 `setTimeout`을 사용할 경우 고정된 delay를 보장할 수 있다.<br/>
 
-<img src="./images/3.png" width="500"/>
+<img src="./images/3.PNG" width="500"/>
 
 새로운 함수의 호출이 이전에 호출된 함수의 끝에 추가되기 때문이다.<br/>
 
